@@ -1,12 +1,12 @@
 # __overwrite_to_prompt, __select_from_list copied from
 # https://github.com/pabloariasal/zfm/blob/master/zfm.zsh
 
-function __overwrite_to_prompt() {
+function __insert_at_prompt() {
     if [[ -z "$1" ]]; then
         zle reset-prompt
         return 0
     fi
-    LBUFFER="$(echo "$1" | tr -d '\r\n')"
+    LBUFFER+="$(echo "$1" | tr -d '\r\n')"
     local ret=$?
     zle reset-prompt
     return $ret
@@ -24,7 +24,7 @@ function __select_from_list() {
     | FZF_DEFAULT_OPTS="$@ ${opts}" fzf \
     | awk '{print $1}' \
     )"
-    __overwrite_to_prompt "$selected"
+    __insert_at_prompt "$selected"
 }
 
 function fzf-dirs() {
