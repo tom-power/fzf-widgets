@@ -7,7 +7,7 @@
 
 ```zsh
 bindkey '^O' fzf-dirs-zfm # default
-bindkey '^E' fzf-dirs # default
+bindkey '^P' fzf-dirs # default
 ```
 
 set `FZF_WIDGETS_DEFAULT_OPTS` to override `FZF_DEFAULT_OPTS` for these widgets i.e.

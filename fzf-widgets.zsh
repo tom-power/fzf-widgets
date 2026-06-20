@@ -33,7 +33,7 @@ function fzf-dirs() {
 }
 
 zle -N fzf-dirs
-bindkey '^E' fzf-dirs
+bindkey '^P' fzf-dirs
 
 function fzf-dirs-zfm() {    
     __fzf_widgets_list=$(zfm list --dirs | sed -E 's/[[:space:]]*\[d\][[:space:]]*$//')
